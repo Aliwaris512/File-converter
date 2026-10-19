@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4F46E5"><animate attributeName="stop-color" values="#4F46E5;#0EA5E9;#7C3AED;#4F46E5" dur="10s" repeatCount="indefinite"/></stop>
+      <stop offset="1" stop-color="#0EA5E9"><animate attributeName="stop-color" values="#0EA5E9;#7C3AED;#4F46E5;#0EA5E9" dur="10s" repeatCount="indefinite"/></stop>
+    </linearGradient>
+    <clipPath id="round"><rect width="900" height="260" rx="18"/></clipPath>
+  </defs>
+  <style>
+    .chip{font:700 13px 'Segoe UI',Arial,sans-serif;fill:#fff}
+    .chipbox{fill:#ffffff;fill-opacity:.16;stroke:#fff;stroke-opacity:.45}
+    .title{font:800 52px 'Segoe UI',Arial,sans-serif;fill:#fff;letter-spacing:1px}
+    .sub{font:500 19px 'Segoe UI',Arial,sans-serif;fill:#E0E7FF}
+    .rise{animation:rise 9s linear infinite}
+    @keyframes rise{0%{transform:translateY(0);opacity:0}10%{opacity:1}85%{opacity:1}100%{transform:translateY(-300px);opacity:0}}
+    .pop{animation:pop 1.2s cubic-bezier(.2,1.4,.4,1) both}
+    @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+    .pulse{animation:pulse 3s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.9}50%{opacity:.55}}
+  </style>
+  <g clip-path="url(#round)">
+    <rect width="900" height="260" fill="url(#bg)"/>
+    <circle cx="80" cy="40" r="120" fill="#fff" fill-opacity=".06" class="pulse"/>
+    <circle cx="840" cy="230" r="150" fill="#fff" fill-opacity=".07" class="pulse"/>
+    <!-- floating format chips -->
+    <g class="rise" style="animation-delay:0s"><g transform="translate(60,290)"><rect class="chipbox" width="62" height="28" rx="14"/><text class="chip" x="31" y="19" text-anchor="middle">PNG</text></g></g>
+    <g class="rise" style="animation-delay:-1.5s"><g transform="translate(170,300)"><rect class="chipbox" width="62" height="28" rx="14"/><text class="chip" x="31" y="19" text-anchor="middle">PDF</text></g></g>
+    <g class="rise" style="animation-delay:-3s"><g transform="translate(300,295)"><rect class="chipbox" width="70" height="28" rx="14"/><text class="chip" x="35" y="19" text-anchor="middle">DOCX</text></g></g>
+    <g class="rise" style="animation-delay:-4.5s"><g transform="translate(520,300)"><rect class="chipbox" width="62" height="28" rx="14"/><text class="chip" x="31" y="19" text-anchor="middle">CSV</text></g></g>
+    <g class="rise" style="animation-delay:-6s"><g transform="translate(640,292)"><rect class="chipbox" width="66" height="28" rx="14"/><text class="chip" x="33" y="19" text-anchor="middle">XLSX</text></g></g>
+    <g class="rise" style="animation-delay:-7.5s"><g transform="translate(770,298)"><rect class="chipbox" width="62" height="28" rx="14"/><text class="chip" x="31" y="19" text-anchor="middle">MP4</text></g></g>
+    <g class="rise" style="animation-delay:-2.2s"><g transform="translate(430,305)"><rect class="chipbox" width="62" height="28" rx="14"/><text class="chip" x="31" y="19" text-anchor="middle">WebP</text></g></g>
+    <!-- title -->
+    <g class="pop" style="transform-origin:450px 120px">
+      <text class="title" x="450" y="125" text-anchor="middle">LocalFile Converter</text>
+    </g>
+    <text class="sub" x="450" y="170" text-anchor="middle" opacity="0">Offline-first · Private · Windows desktop
+      <animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="1s" fill="freeze"/>
+    </text>
+    <rect x="330" y="190" width="240" height="4" rx="2" fill="#fff" fill-opacity=".85">
+      <animate attributeName="width" values="0;240;240;0" keyTimes="0;.3;.8;1" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x" values="450;330;330;450" keyTimes="0;.3;.8;1" dur="6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>
