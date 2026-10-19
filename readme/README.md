@@ -41,14 +41,12 @@ Formats are listed only when the required local Python dependency or engine is a
 
 <br/>
 
-From PowerShell:
+Run these commands from the project folder in PowerShell:
 
 ```powershell
-cd "C:\Users\aliwa\Desktop\FileConverter"
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+py -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 For DOC/DOCX/PPTX/HTML-to-PDF conversions, separately install LibreOffice and ensure `soffice.exe` is on `PATH` or installed in the standard Program Files location. LibreOffice is not installed or updated automatically by this app. Restart the app after installing it.
@@ -63,7 +61,6 @@ For DOC/DOCX/PPTX/HTML-to-PDF conversions, separately install LibreOffice and en
 Open the popup without a selected file:
 
 ```powershell
-cd "C:\Users\aliwa\Desktop\FileConverter"
 .\.venv\Scripts\python.exe .\app.py
 ```
 
@@ -86,7 +83,6 @@ The conversion creates a new output name beside the input (or a new output direc
 Register the per-user context menu using the project virtual environment:
 
 ```powershell
-cd "C:\Users\aliwa\Desktop\FileConverter"
 .\scripts\install_context_menu.ps1
 ```
 
@@ -134,7 +130,6 @@ Convert without showing the popup:
 Build the Windows executable:
 
 ```powershell
-cd "C:\Users\aliwa\Desktop\FileConverter"
 .\.venv\Scripts\python.exe -m PyInstaller --noconfirm --distpath .\dist --workpath .\build .\pyinstaller.spec
 ```
 
@@ -145,7 +140,6 @@ The sample Inno Setup script uses the build output at `dist\LocalFileConverter`,
 ## 🧪 Tests
 
 ```powershell
-cd "C:\Users\aliwa\Desktop\FileConverter"
 .\.venv\Scripts\python.exe -m pytest -q
 ```
 
